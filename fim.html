@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Encerramento</title>
+
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+
+    <style>
+        body{
+            margin:0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<a-scene>
+
+    <!-- IMAGEM 360 -->
+    <a-sky src="imagens/imagem360.jpeg"></a-sky>
+
+    <!-- LUZ -->
+    <a-light type="ambient" intensity="1"></a-light>
+
+    <!-- CÂMERA -->
+    <a-entity camera look-controls position="0 1.6 0">
+    </a-entity>
+
+     <!-- SOM AMBIENTE -->
+    <a-entity
+        sound="
+        src: url(audio/2floresta.mp3);
+        autoplay: true;
+        loop: true;
+        volume: 0.2">
+    </a-entity>
+
+    <!-- PAINEL PRINCIPAL -->
+    <a-plane
+        position="0 2 -4"
+        width="8"
+        height="5"
+        color="#000000"
+        opacity="0.7">
+
+        <a-text
+            value="REALIDADE VIRTUAL:\nEXPLORANDO O MUNDO DAS PLANTAS MEDICINAIS\nCOMO RECURSO EDUCATIVO"
+            align="center"
+            color="white"
+            width="8"
+            position="0 1 0.1">
+        </a-text>
+
+        <a-text
+            value="Autores:\nGeane de Araujo Vidal\nKaiany Vidal Lopes\nSaulo Oliveira Lopes"
+            align="center"
+            color="white"
+            width="6"
+            position="-2 -0.5 0.1">
+        </a-text>
+
+        <a-text
+            value="Orientador:\nHigson Nascimento Vaz"
+            align="center"
+            color="white"
+            width="6"
+            position="2 -0.5 0.1">
+        </a-text>
+
+        <a-text
+            value="OBRIGADO PELA VISITA!"
+            align="center"
+            color="white"
+            width="6"
+            position="0 -1.2 1.5">
+        </a-text>
+
+    </a-plane>
+
+
+</a-scene>
+
+</body>
+</html>

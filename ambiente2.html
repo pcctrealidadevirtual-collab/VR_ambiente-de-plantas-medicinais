@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas Medicinais VR</title>
+
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<a-scene>
+
+    <!-- CÉU 360 -->
+    <a-sky src="imagens/imagem360.jpeg"></a-sky>
+
+    <!-- ASSETS -->
+    <a-assets>
+
+        <!-- TEXTURA DO CHÃO -->
+        <img id="grama"
+             src="imagens/3grama.jpg">
+
+    </a-assets>
+
+    <!-- CHÃO -->
+    <a-plane
+        position="0 0 -12"
+        rotation="-90 0 0"
+        width="100"
+        height="100"
+        src="#grama"
+        repeat="40 40"
+
+        material="
+            roughness: 1;
+            metalness: 0;
+        "
+
+        shadow="receive: true">
+    </a-plane>
+
+    <!-- SOM AMBIENTE -->
+    <a-entity
+        sound="
+        src: url(audio/2floresta.mp3);
+        autoplay: true;
+        loop: true;
+        volume: 0.2">
+    </a-entity>
+
+<!-- PLAYER -->
+<a-entity id="rig" position="0 0 0">
+
+    <!-- CÂMERA -->
+    <a-camera
+        id="camera"
+        position="0 1.6 0"
+        look-controls>
+
+        <a-cursor
+            fuse="true"
+            fuse-timeout="2000"
+            color="yellow">
+        </a-cursor>
+
+    </a-camera>
+
+</a-entity>
+
+
+<!-- BABOSA -->
+<a-image
+    id="babosa"
+    src="imagens/babosa1.png"
+    position="0 1.5 -12"
+    width="4"
+    height="4"
+    look-at="#camera"
+
+    animation__mouseenter="property: scale; to: 1.2 1.2 1.2; dur: 300"
+    animation__mouseleave="property: scale; to: 1 1 1; dur: 300"
+
+    sound="src: url(audio/BABOSA.mp3)">
+</a-image>
+
+<a-plane position="0 4 -12" width="4" height="1" color="#222" look-at="#camera">
+    <a-text value="BABOSA (Aloe vera)\nFamília Asphodelaceae"
+            align="center"
+            color="white"
+            position="0 0 0.1">
+    </a-text>
+</a-plane>
+
+
+<!-- ALECRIM -->
+<a-image
+    id="alecrim"
+    src="imagens/Alecrim.png"
+    position="7.1 1.6 -9.7"
+    width="4"
+    height="4"
+    look-at="#camera"
+
+    animation__mouseenter="property: scale; to: 1.2 1.2 1.2; dur: 300"
+    animation__mouseleave="property: scale; to: 1 1 1; dur: 300"
+
+    sound="src: url(audio/ALECRIM.mp3)">
+</a-image>
+
+<a-plane position="7.1 4 -9.7" width="4" height="1" color="#222" look-at="#camera">
+    <a-text value="ALECRIM (Salvia rosmarinus)\nFamília Lamiaceae"
+            align="center"
+            color="white"
+            position="0 0 0.1">
+    </a-text>
+</a-plane>
+
+
+<!-- ARRUDA -->
+<a-image
+    id="arruda"
+    src="imagens/Arruda.png"
+    position="11.4 1.7 -3.7"
+    width="4"
+    height="4"
+    look-at="#camera"
+
+    animation__mouseenter="property: scale; to: 1.2 1.2 1.2; dur: 300"
+    animation__mouseleave="property: scale; to: 1 1 1; dur: 300"
+
+    sound="src: url(audio/ARRUDA.mp3)">
+</a-image>
+
+<a-plane position="11.4 4 -3.7" width="4" height="1" color="#222" look-at="#camera">
+    <a-text value="ARRUDA (Ruta graveolens)\nFamília Rutaceae"
+            align="center"
+            color="white"
+            position="0 0 0.1">
+    </a-text>
+</a-plane>
+
+
+<!-- ANDIROBA -->
+<a-image
+    id="andiroba"
+    src="imagens/andiroba2.png"
+   position="16.4 5 3.7"
+    width="20"
+    height="19"
+    look-at="#camera"
+
+    animation__mouseenter="property: scale; to: 1.2 1.2 1.2; dur: 300"
+    animation__mouseleave="property: scale; to: 1 1 1; dur: 300" 
+
+    sound="src: url(audio/ANDIROBA.mp3)">
+</a-image>
+
+<a-plane position="16.4 3 3.7" width="4" height="1" color="#222" look-at="#camera">
+    <a-text value="ANDIROBA (Carapa guianensis)\nFamília Meliaceae"
+            align="center"
+            color="white"
+            position="0 0 0.1">
+    </a-text>
+</a-plane>
+
+
+<!-- ALFAVACA -->
+<a-image
+    id="alfavaca"
+    src="imagens/alfavaca.png"
+    position="7.1 1.6 9.7"
+    width="4"
+    height="4"
+   look-at="#camera"
+
+   animation__mouseenter="property: scale; to: 1.2 1.2 1.2; dur: 300"
+    animation__mouseleave="property: scale; to: 1 1 1; dur: 300"
+
+    sound="src: url(audio/ALFAVACA.mp3)">
+</a-image>
+
+<a-plane position="7.1 4 9.7" width="4" height="1" color="#222" look-at="#camera">
+    <a-text value="ALFAVACA (Ocimum basilicum)\nFamília Lamiaceae"
+            align="center"
+            color="white"
+            position="0 0 0.1">
+    </a-text>
+</a-plane>
+
+
+<!-- COIRAMA -->
+<a-image
+    id="coirama"
+    src="imagens/coerama.png"
+    position="0 1.6 12"
+    width="4"
+    height="4"
+    look-at="#camera"
+
+    animation__mouseenter="property: scale; to: 1.2 1.2 1.2; dur: 300"
+    animation__mouseleave="property: scale; to: 1 1 1; dur: 300"
+
+    sound="src: url(audio/COIRAMA.mp3)">
+</a-image>
+
+<a-plane position="0 4 12" width="4" height="1" color="#222" look-at="#camera">
+    <a-text value="COIRAMA (Kalanchoe brasiliensis)\nFamília Crassulaceae
+"
+            align="center"
+            color="white"
+            position="0 0 0.1">
+    </a-text>
+</a-plane>
+
+<!-- BOTÃO PARA O AMBIENTE 3 -->
+
+<a-plane
+    id="btnProximo"
+     position="-8.4 4 4"
+    width="4"
+    height="2"
+    color="#14532D"
+    look-at="#camera"
+
+    animation__mouseenter="
+        property: scale;
+        to: 1.1 1.1 1.1;
+        dur: 200"
+
+    animation__mouseleave="
+        property: scale;
+        to: 1 1 1;
+        dur: 200">
+
+    <a-text
+        value="CONCLUIU A VISITA?\nOLHE AQUI PARA\nIR AO AMBIENTE 3"
+        align="center"
+        color="white"
+        position="0 0 4">
+    </a-text>
+
+</a-plane>
+
+
+</a-scene>
+
+<script>
+
+window.addEventListener('load', () => {
+
+    let audioAtual = null;
+    const rig = document.querySelector('#rig');
+
+    const plantas = document.querySelectorAll('a-image');
+
+    plantas.forEach(planta => {
+
+        planta.addEventListener('click', function () {
+
+            // Se for a mesma planta, não faz nada
+            if (audioAtual === this) {
+                return;
+            }
+
+            // Para o áudio anterior
+            if (audioAtual) {
+                audioAtual.components.sound.stopSound();
+            }
+
+            // Toca o áudio da nova planta
+            this.components.sound.playSound();
+
+            audioAtual = this;
+
+            // TELETRANSPORTE
+            const pos = this.getAttribute('position');
+
+            const dx = pos.x;
+            const dz = pos.z;
+
+            const distancia = Math.sqrt(dx * dx + dz * dz);
+
+            const destinoX = pos.x - (dx / distancia) * 3;
+            const destinoZ = pos.z - (dz / distancia) * 3;
+
+            rig.setAttribute(
+                'animation',
+                `property: position;
+                 to: ${destinoX} 0 ${destinoZ};
+                 dur: 1000;
+                 easing: easeInOutQuad`
+            );
+
+        });
+
+    });
+
+});
+
+
+</script>
+
+<script>
+
+document
+.querySelector('#btnProximo')
+.addEventListener('click', () => {
+
+    window.location.href = "ambiente3.html";
+
+});
+
+</script>
+
+</body>
+</html>
